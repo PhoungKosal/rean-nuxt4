@@ -15,8 +15,12 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@nuxt/scripts',
     '@nuxt/test-utils',
+    '@nuxtjs/color-mode',
     'shadcn-nuxt',
   ],
+  colorMode: {
+    classSuffix: ''
+  },
 
   css: ['~/assets/css/main.css'],
   
