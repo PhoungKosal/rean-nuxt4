@@ -3,6 +3,10 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
+  srcDir: 'app/',
+  alias: {
+    '#shared': './shared'
+  },
 
   modules: [
     '@nuxt/eslint',
@@ -10,7 +14,8 @@ export default defineNuxtConfig({
     '@nuxt/icon',
     '@nuxt/image',
     '@nuxt/scripts',
-    '@nuxt/test-utils'
+    '@nuxt/test-utils',
+    'shadcn-nuxt',
   ],
 
   css: ['~/assets/css/main.css'],
@@ -19,5 +24,17 @@ export default defineNuxtConfig({
     plugins: [
       tailwindcss(),
     ],
+  },
+
+  shadcn: {
+    /**
+     * Prefix for all the imported component
+     */
+    prefix: '',
+    /**
+     * Directory that the component lives in.
+     * @default "app/components/ui"
+     */
+    componentDir: 'app/components/ui'
   },
 })
